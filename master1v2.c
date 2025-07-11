@@ -5,15 +5,19 @@
 #include <avr/interrupt.h>
 #include <util/delay.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "usart.h"
 #include "led_blink.h"
 #include "adcc.h"
 
 
 #define IGNORE_PRECISION_BITS 1
+#define TOTAL_PARAM 4
 #define OFFSET(x) (int)((x >> 4) - 7.5)
+
 volatile uint8_t receiver_ready = 0x00;
 int dr=0, dtheta1=0, dtheta2=0, dphi=0;
+int parameters[4] = {0, 0, 0, 0};
 
 void initialization(){
     led_init();
@@ -28,7 +32,15 @@ ISR(USART_RXC_vect){
 }
 
 void set_next_move(char * movement){
-    sprintf(movement, "m %d %d %d %d", dr, dtheta1, dtheta2, dphi);
+    // sprintf(movement, "m %d %d %d %d", dr, dtheta1, dtheta2, dphi);
+    *movement++ = 'm';
+    *movement++ = ' ';
+    for(int i=0; i<TOTAL_PARAM; i++){
+        itoa(parameters[i], movement, 10);
+        while(*movement) movement++;
+        *movement++ = ' ';
+    }
+    *(movement-1) = '\0';
 }
 
 
@@ -38,10 +50,10 @@ void compile_joystic_input(){
     // dtheta2 = ADC_read_channel(3) >> IGNORE_PRECISION_BITS;
     // dphi = ADC_read_channel(4) >> IGNORE_PRECISION_BITS;
     blink_led(100);
-    dr = OFFSET(ADC_read_channel(0x01));
-    dtheta1 = OFFSET(ADC_read_channel(0x02));
-    dtheta2 = OFFSET(ADC_read_channel(0x03));
-    dphi = OFFSET(ADC_read_channel(0x04));
+    parameters[0] = OFFSET(ADC_read_channel(0x01));
+    parameters[1] = OFFSET(ADC_read_channel(0x02));
+    parameters[2] = OFFSET(ADC_read_channel(0x03));
+    parameters[3] = OFFSET(ADC_read_channel(0x04));
     blink_led(100);
 }
 

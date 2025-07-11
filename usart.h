@@ -48,10 +48,11 @@ void USART_receive(char *buffer) {
     uint8_t i = 0;
 
     // Keep receiving until newline
-    do {
+    while(1){
         ch = USART_receive_char();
+        if(ch == ENDING_CHAR) break;
         buffer[i++] = ch;
-    } while (ch != ENDING_CHAR);
+    }
 
     buffer[i] = '\0'; // Null terminate
 }
