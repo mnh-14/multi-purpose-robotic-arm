@@ -1,5 +1,19 @@
 <circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
 
-<item itemtype="MCU" CircId="mega32-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-76,-136" rotation="90" hflip="1" vflip="1" label="mega32-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Wdt_enabled="false" MainMcu="true" SerialMon="-1" />
+<item itemtype="MCU" CircId="mega32-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-84,-124" rotation="90" hflip="1" vflip="1" label="mega32-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="8 MHz" Program="../bin/master2.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Wdt_enabled="false" MainMcu="true" SerialMon="-1" />
+
+<item itemtype="SerialTerm" CircId="SerialTerm-3" mainComp="false" Show_id="false" Show_Val="false" Pos="-36,-168" rotation="0" hflip="1" vflip="1" label="SerialTerm-3" idLabPos="-20,-32" labelrot="0" valLabPos="-16,20" valLabRot="0" Baudrate="9600 _Bd" DataBits="8 _bits" StopBits="1 _bits" SerialMon="false" />
+
+<item itemtype="Rail" CircId="Rail-4" mainComp="false" ShowProp="Voltage" Show_id="false" Show_Val="true" Pos="-152,-232" rotation="90" hflip="1" vflip="1" label="Rail-4" idLabPos="-5,-10" labelrot="-90" valLabPos="-12,6" valLabRot="-90" Voltage="5 V" />
+
+<item itemtype="Led" CircId="Led-5" mainComp="false" Show_id="false" Show_Val="false" Pos="-68,-16" rotation="0" hflip="1" vflip="1" label="Led-5" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="true" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
+
+<item itemtype="Connector" uid="Connector-3" startpinid="Rail-4-outnod" endpinid="mega32-1-RST" pointList="-152,-216,-152,-188,-156,-188,-156,-132" />
+
+<item itemtype="Connector" uid="Connector-4" startpinid="mega32-1-PORTA0" endpinid="Led-5-lPin" pointList="-92,-68,-92,-16,-84,-16" />
+
+<item itemtype="Connector" uid="Connector-7" startpinid="mega32-1-PORTD0" endpinid="SerialTerm-3-pin0" pointList="-196,-132,-196,-176,-60,-176" />
+
+<item itemtype="Connector" uid="Connector-8" startpinid="mega32-1-PORTD1" endpinid="SerialTerm-3-pin1" pointList="-204,-132,-204,-160,-60,-160" />
 
 </circuit>
