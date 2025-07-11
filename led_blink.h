@@ -21,14 +21,21 @@ void led_init(){
     DDR_LED |= (1<<LED_PIN);
 }
 
+
+void led_on(){
+    LED_PORT |= (1<<LED_PIN);
+}
+
+
+void led_off(){
+    LED_PORT &= ~(1<<LED_PIN);
+}
+
 void blink_led(int times){
     static int count = 0;
     if(count >= times){
         count = 0;
-        if(LED_PORT & (1<<LED_PIN))
-            LED_PORT &= ~(1<<LED_PIN);
-        else
-            LED_PORT |= (1<<LED_PIN);
+        LED_PORT ^= (1<<LED_PIN);
     }
     count++;
 }

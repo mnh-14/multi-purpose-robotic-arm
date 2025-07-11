@@ -1,19 +1,59 @@
 <circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
 
-<item itemtype="MCU" CircId="mega32-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-84,-124" rotation="90" hflip="1" vflip="1" label="mega32-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="8 MHz" Program="../bin/master2.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Wdt_enabled="false" MainMcu="true" SerialMon="-1" />
+<item itemtype="MCU" CircId="mega32-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-84,-124" rotation="90" hflip="1" vflip="1" label="mega32-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="8 MHz" Program="../bin/master1v2.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Wdt_enabled="false" MainMcu="true" SerialMon="-1" />
 
 <item itemtype="SerialTerm" CircId="SerialTerm-3" mainComp="false" Show_id="false" Show_Val="false" Pos="-36,-168" rotation="0" hflip="1" vflip="1" label="SerialTerm-3" idLabPos="-20,-32" labelrot="0" valLabPos="-16,20" valLabRot="0" Baudrate="9600 _Bd" DataBits="8 _bits" StopBits="1 _bits" SerialMon="false" />
 
 <item itemtype="Rail" CircId="Rail-4" mainComp="false" ShowProp="Voltage" Show_id="false" Show_Val="true" Pos="-152,-232" rotation="90" hflip="1" vflip="1" label="Rail-4" idLabPos="-5,-10" labelrot="-90" valLabPos="-12,6" valLabRot="-90" Voltage="5 V" />
 
-<item itemtype="Led" CircId="Led-5" mainComp="false" Show_id="false" Show_Val="false" Pos="-68,-16" rotation="0" hflip="1" vflip="1" label="Led-5" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="true" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
+<item itemtype="KY023" CircId="KY023-6" mainComp="false" Show_id="false" Show_Val="false" Pos="-40,28" rotation="90" hflip="1" vflip="1" label="KY023-6" idLabPos="-34,20" labelrot="-90" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="KY023" CircId="KY023-7" mainComp="false" Show_id="false" Show_Val="false" Pos="-212,32" rotation="90" hflip="1" vflip="1" label="KY023-7" idLabPos="-34,20" labelrot="-90" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Voltimeter" CircId="Voltimeter-11" mainComp="false" Show_id="false" Show_Val="false" Pos="104,0" rotation="0" hflip="1" vflip="1" label="Voltimeter-11" idLabPos="-24,-40" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Ground" CircId="Ground-14" mainComp="false" Show_id="false" Show_Val="false" Pos="140,68" rotation="0" hflip="1" vflip="1" label="Ground-14" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Voltage Source" CircId="Voltage Source-15" mainComp="false" ShowProp="MaxValue" Show_id="false" Show_Val="true" Pos="76,-80" rotation="0" hflip="-1" vflip="1" label="Voltage Source-15" idLabPos="-32,-48" labelrot="0" valLabPos="-8,30" valLabRot="0" Running="true" Value_Volt="1.685 V" MaxValue="5 V" MinValue="0 V" />
+
+<item itemtype="Rail" CircId="Rail-16" mainComp="false" ShowProp="Voltage" Show_id="false" Show_Val="true" Pos="-204,-40" rotation="450" hflip="1" vflip="1" label="Rail-16" idLabPos="-5,-10" labelrot="-90" valLabPos="-12,6" valLabRot="-90" Voltage="5 V" />
+
+<item itemtype="LedRgb" CircId="LedRgb-22" mainComp="false" Show_id="false" Show_Val="false" Pos="-68,-24" rotation="0" hflip="1" vflip="1" label="LedRgb-22" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" CommonCathode="true" Threshold_R="2.4 V" MaxCurrent_R="25 mA" Resistance_R="0.6 Ω" Threshold_G="3.5 V" MaxCurrent_G="30 mA" Resistance_G="0.6 Ω" Threshold_B="3.5 V" MaxCurrent_B="30 mA" Resistance_B="0.6 Ω" />
+
+<item itemtype="Ground" CircId="Ground-23" mainComp="false" Show_id="false" Show_Val="false" Pos="28,20" rotation="0" hflip="1" vflip="1" label="Ground-23" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Node" CircId="Node-17" mainComp="false" Pos="-172,-24" />
+
+<item itemtype="Node" CircId="Node-19" mainComp="false" Pos="-108,24" />
 
 <item itemtype="Connector" uid="Connector-3" startpinid="Rail-4-outnod" endpinid="mega32-1-RST" pointList="-152,-216,-152,-188,-156,-188,-156,-132" />
-
-<item itemtype="Connector" uid="Connector-4" startpinid="mega32-1-PORTA0" endpinid="Led-5-lPin" pointList="-92,-68,-92,-16,-84,-16" />
 
 <item itemtype="Connector" uid="Connector-7" startpinid="mega32-1-PORTD0" endpinid="SerialTerm-3-pin0" pointList="-196,-132,-196,-176,-60,-176" />
 
 <item itemtype="Connector" uid="Connector-8" startpinid="mega32-1-PORTD1" endpinid="SerialTerm-3-pin1" pointList="-204,-132,-204,-160,-60,-160" />
+
+<item itemtype="Connector" uid="Connector-9" startpinid="KY023-6-vrx" endpinid="mega32-1-PORTA1" pointList="-76,16,-100,16,-100,-68" />
+
+<item itemtype="Connector" uid="Connector-11" startpinid="KY023-7-vrx" endpinid="mega32-1-PORTA3" pointList="-248,20,-248,4,-116,4,-116,-68" />
+
+<item itemtype="Connector" uid="Connector-12" startpinid="KY023-7-vry" endpinid="mega32-1-PORTA4" pointList="-248,28,-256,28,-256,-4,-124,-4,-124,-68" />
+
+<item itemtype="Connector" uid="Connector-20" startpinid="Voltimeter-11-rPin" endpinid="Ground-14-Gnd" pointList="112,16,112,36,140,36,140,52" />
+
+<item itemtype="Connector" uid="Connector-24" startpinid="Node-17-1" endpinid="mega32-1-PORTV1" pointList="-172,-24,-156,-24,-156,-68" />
+
+<item itemtype="Connector" uid="Connector-25" startpinid="Rail-16-outnod" endpinid="Node-17-0" pointList="-204,-24,-172,-24" />
+
+<item itemtype="Connector" uid="Connector-26" startpinid="Node-17-2" endpinid="mega32-1-PORTV0" pointList="-172,-24,-172,-68" />
+
+<item itemtype="Connector" uid="Connector-27" startpinid="mega32-1-PORTA2" endpinid="Node-19-1" pointList="-108,-68,-108,24" />
+
+<item itemtype="Connector" uid="Connector-28" startpinid="KY023-6-vry" endpinid="Node-19-0" pointList="-76,24,-108,24" />
+
+<item itemtype="Connector" uid="Connector-29" startpinid="Node-19-2" endpinid="Voltimeter-11-lPin" pointList="-108,24,-108,84,96,84,96,16" />
+
+<item itemtype="Connector" uid="Connector-30" startpinid="mega32-1-PORTA0" endpinid="LedRgb-22-Pin0" pointList="-92,-68,-92,-32,-84,-32" />
+
+<item itemtype="Connector" uid="Connector-31" startpinid="LedRgb-22-Pin3" endpinid="Ground-23-Gnd" pointList="-52,-24,28,-24,28,4" />
 
 </circuit>

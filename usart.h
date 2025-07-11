@@ -5,6 +5,10 @@
 #define BAUD_NUM 6
 #endif
 
+#ifndef ENDING_CHAR
+#define ENDING_CHAR '$'
+#endif
+
 #include <avr/io.h>
 
 
@@ -47,7 +51,7 @@ void USART_receive(char *buffer) {
     do {
         ch = USART_receive_char();
         buffer[i++] = ch;
-    } while (ch != '\n');
+    } while (ch != ENDING_CHAR);
 
     buffer[i] = '\0'; // Null terminate
 }
@@ -62,7 +66,7 @@ void USART_send(char *data) {
         USART_send_char(*data);
         data++;
     }
-    USART_send_char('\n');
+    USART_send_char(ENDING_CHAR);
 }
 
 

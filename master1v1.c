@@ -10,7 +10,7 @@
 
 
 volatile uint8_t receiver_ready = 0x00;
-int dx, dy, dz, da;
+int dr, dtheta1, dtheta2, dphi;
 
 void initialization(){
     led_init();
@@ -24,7 +24,7 @@ ISR(USART_RXC_vect){
 }
 
 void set_next_move(char * movement){
-    sprintf(movement, "m %d %d %d %d", dx, dy, dz, da);
+    sprintf(movement, "m %d %d %d %d", dr, dtheta1, dtheta2, dphi);
 }
 
 int main(){
@@ -39,7 +39,7 @@ int main(){
         blink_led(1);
         _delay_ms(60);
     }
-    dx = 2; dy = -1; dz = 3; da = 8;
+    dr = 2; dtheta1 = -1; dtheta2 = 3; dphi = 8;
     
     while(1){
         _delay_ms(300);
