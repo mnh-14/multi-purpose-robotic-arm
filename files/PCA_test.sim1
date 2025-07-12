@@ -1,0 +1,89 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="MCU" CircId="mega32-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-52,-92" rotation="90" hflip="1" vflip="1" label="mega32-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="8 MHz" Program="../bin/pca_test2.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Wdt_enabled="false" MainMcu="true" SerialMon="-1" />
+
+<item itemtype="I2CToParallel" CircId="I2CToParallel-4" mainComp="false" Show_id="true" Show_Val="false" Pos="-292,4" rotation="0" hflip="-1" vflip="1" label="I2CToParallel-4" idLabPos="-17.8285,37.8649" labelrot="0" valLabPos="-16,20" valLabRot="0" Control_Code="40" Frequency="100 _kHz" />
+
+<item itemtype="Rail" CircId="Rail-6" mainComp="false" ShowProp="Voltage" Show_id="false" Show_Val="true" Pos="-124,-168" rotation="90" hflip="1" vflip="1" label="Rail-6" idLabPos="-5,-10" labelrot="-90" valLabPos="-12,6" valLabRot="-90" Voltage="5 V" />
+
+<item itemtype="LAnalizer" CircId="LAnalizer-9" mainComp="false" Show_id="false" Show_Val="false" Pos="-328,-252" rotation="0" hflip="1" vflip="1" label="LAnalizer-9" idLabPos="-90,-100" labelrot="0" valLabPos="-16,20" valLabRot="0" Basic_X="135 _px" Basic_Y="135 _px" BufferSize="100000" connectGnd="true" InputImped="10 MΩ" TimDiv="1000000000" TimPos="0" VolDiv="0.15" Tunnels=",,,,,,,," Trigger="9" TimeStep="1000 _ps" AutoExport="false" TresholdR="2.5 V" Bus="false,false,false,false,false,false,false,false," TresholdF="2.5 V" />
+
+<item itemtype="Rail" CircId="Rail-14" mainComp="false" ShowProp="Voltage" Show_id="false" Show_Val="true" Pos="-256,-152" rotation="90" hflip="1" vflip="1" label="Rail-14" idLabPos="-5,-10" labelrot="-90" valLabPos="-12,6" valLabRot="-90" Voltage="5 V" />
+
+<item itemtype="Resistor" CircId="Resistor-15" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-276,-76" rotation="90" hflip="1" vflip="1" label="Resistor-15" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="4.7 kΩ" />
+
+<item itemtype="Resistor" CircId="Resistor-16" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-240,-76" rotation="90" hflip="1" vflip="1" label="Resistor-16" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="4.7 kΩ" />
+
+<item itemtype="LedRgb" CircId="LedRgb-22" mainComp="false" Show_id="false" Show_Val="false" Pos="-28,16" rotation="0" hflip="1" vflip="1" label="LedRgb-22" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" CommonCathode="true" Threshold_R="3.4 V" MaxCurrent_R="30 mA" Resistance_R="0.6 Ω" Threshold_G="3.5 V" MaxCurrent_G="30 mA" Resistance_G="0.6 Ω" Threshold_B="3.5 V" MaxCurrent_B="30 mA" Resistance_B="0.6 Ω" />
+
+<item itemtype="Ground" CircId="Ground-23" mainComp="false" Show_id="false" Show_Val="false" Pos="8,76" rotation="0" hflip="1" vflip="1" label="Ground-23" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Bus" CircId="Bus-24" mainComp="false" Show_id="false" Show_Val="false" Pos="-480,-292" rotation="180" hflip="1" vflip="1" label="Bus-24" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Num_Bits="8 _bits" Start_Bit="0" />
+
+<item itemtype="Bus" CircId="Bus-25" mainComp="false" Show_id="false" Show_Val="false" Pos="-340,-20" rotation="180" hflip="1" vflip="1" label="Bus-25" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Num_Bits="8 _bits" Start_Bit="0" />
+
+<item itemtype="Node" CircId="Node-17" mainComp="false" Pos="-256,-112" />
+
+<item itemtype="Node" CircId="Node-18" mainComp="false" Pos="-256,-20" />
+
+<item itemtype="Node" CircId="Node-19" mainComp="false" Pos="-240,-12" />
+
+<item itemtype="Connector" uid="Connector-3" startpinid="Rail-6-outnod" endpinid="mega32-1-RST" pointList="-124,-152,-124,-100" />
+
+<item itemtype="Connector" uid="Connector-20" startpinid="Node-17-1" endpinid="Resistor-15-lPin" pointList="-256,-112,-276,-112,-276,-92" />
+
+<item itemtype="Connector" uid="Connector-21" startpinid="Rail-14-outnod" endpinid="Node-17-0" pointList="-256,-136,-256,-112" />
+
+<item itemtype="Connector" uid="Connector-22" startpinid="Node-17-2" endpinid="Resistor-16-lPin" pointList="-256,-112,-240,-112,-240,-92" />
+
+<item itemtype="Connector" uid="Connector-23" startpinid="Resistor-15-rPin" endpinid="Node-18-1" pointList="-276,-60,-276,-52,-256,-52,-256,-20" />
+
+<item itemtype="Connector" uid="Connector-24" startpinid="I2CToParallel-4-in0" endpinid="Node-18-0" pointList="-268,-20,-256,-20" />
+
+<item itemtype="Connector" uid="Connector-25" startpinid="Node-18-2" endpinid="mega32-1-PORTC1" pointList="-256,-20,-196,-20,-196,-36" />
+
+<item itemtype="Connector" uid="Connector-26" startpinid="Resistor-16-rPin" endpinid="Node-19-1" pointList="-240,-60,-240,-12" />
+
+<item itemtype="Connector" uid="Connector-27" startpinid="I2CToParallel-4-in1" endpinid="Node-19-0" pointList="-268,-12,-240,-12" />
+
+<item itemtype="Connector" uid="Connector-28" startpinid="Node-19-2" endpinid="mega32-1-PORTC0" pointList="-240,-12,-204,-12,-204,-36" />
+
+<item itemtype="Connector" uid="Connector-38" startpinid="mega32-1-PORTA0" endpinid="LedRgb-22-Pin0" pointList="-60,-36,-60,8,-44,8" />
+
+<item itemtype="Connector" uid="Connector-39" startpinid="LedRgb-22-Pin3" endpinid="Ground-23-Gnd" pointList="-12,16,8,16,8,60" />
+
+<item itemtype="Connector" uid="Connector-40" startpinid="Bus-24-ePin8" endpinid="LAnalizer-9-Pin0" pointList="-472,-292,-456,-292,-456,-316,-416,-316" />
+
+<item itemtype="Connector" uid="Connector-41" startpinid="Bus-24-ePin7" endpinid="LAnalizer-9-Pin1" pointList="-472,-284,-444,-284,-444,-300,-416,-300" />
+
+<item itemtype="Connector" uid="Connector-42" startpinid="Bus-24-ePin6" endpinid="LAnalizer-9-Pin2" pointList="-472,-276,-432,-276,-432,-284,-416,-284" />
+
+<item itemtype="Connector" uid="Connector-43" startpinid="Bus-24-ePin5" endpinid="LAnalizer-9-Pin3" pointList="-472,-268,-416,-268" />
+
+<item itemtype="Connector" uid="Connector-44" startpinid="Bus-24-ePin4" endpinid="LAnalizer-9-Pin4" pointList="-472,-260,-440,-260,-440,-252,-416,-252" />
+
+<item itemtype="Connector" uid="Connector-45" startpinid="Bus-24-ePin3" endpinid="LAnalizer-9-Pin5" pointList="-472,-252,-448,-252,-448,-236,-416,-236" />
+
+<item itemtype="Connector" uid="Connector-46" startpinid="Bus-24-ePin2" endpinid="LAnalizer-9-Pin6" pointList="-472,-244,-456,-244,-456,-220,-416,-220" />
+
+<item itemtype="Connector" uid="Connector-47" startpinid="Bus-25-ePin8" endpinid="I2CToParallel-4-out0" pointList="-332,-20,-316,-20" />
+
+<item itemtype="Connector" uid="Connector-48" startpinid="I2CToParallel-4-out1" endpinid="Bus-25-ePin7" pointList="-316,-12,-332,-12" />
+
+<item itemtype="Connector" uid="Connector-49" startpinid="Bus-25-ePin6" endpinid="I2CToParallel-4-out2" pointList="-332,-4,-316,-4" />
+
+<item itemtype="Connector" uid="Connector-50" startpinid="I2CToParallel-4-out3" endpinid="Bus-25-ePin5" pointList="-316,4,-332,4" />
+
+<item itemtype="Connector" uid="Connector-51" startpinid="Bus-25-ePin4" endpinid="I2CToParallel-4-out4" pointList="-332,12,-316,12" />
+
+<item itemtype="Connector" uid="Connector-52" startpinid="I2CToParallel-4-out5" endpinid="Bus-25-ePin3" pointList="-316,20,-332,20" />
+
+<item itemtype="Connector" uid="Connector-53" startpinid="Bus-25-ePin2" endpinid="I2CToParallel-4-out6" pointList="-332,28,-316,28" />
+
+<item itemtype="Connector" uid="Connector-54" startpinid="I2CToParallel-4-out7" endpinid="Bus-25-ePin1" pointList="-316,36,-332,36" />
+
+<item itemtype="Connector" uid="Connector-55" startpinid="Bus-24-ePin1" endpinid="LAnalizer-9-Pin7" pointList="-472,-236,-464,-236,-464,-204,-416,-204" />
+
+<item itemtype="Connector" uid="Connector-56" startpinid="Bus-24-busPinI" endpinid="Bus-25-ePin0" pointList="-480,-236,-480,-20,-340,-20" />
+
+</circuit>
