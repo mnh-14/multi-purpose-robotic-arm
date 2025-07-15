@@ -27,11 +27,15 @@ void initiate(){
 
 
 void extract_parameters(char * cmd){
-    cmd++;
-    parameters[0] = strtol(cmd, &cmd, 10);
-    parameters[1] = strtol(cmd, &cmd, 10);
-    parameters[2] = strtol(cmd, &cmd, 10);
-    parameters[3] = strtol(cmd, &cmd, 10);
+    // cmd++;
+    // parameters[0] = strtol(cmd, &cmd, 10);
+    // parameters[1] = strtol(cmd, &cmd, 10);
+    // parameters[2] = strtol(cmd, &cmd, 10);
+    // parameters[3] = strtol(cmd, &cmd, 10);
+    parameters[0] = +2;
+    parameters[1] = +2;
+    parameters[2] = +2;
+    parameters[3] = +2;
 }
 
 
@@ -63,19 +67,21 @@ void main(){
     char cmd[20];
     led_on();
     set_angles();
-    _delay_ms(1000);
+    _delay_ms(2000);
     led_off();
     // if (UCSRA & (1 << FE)) {
     //     rapid_blink_led(50, 50);
     // }
-    USART_receive(cmd);
+    // USART_receive(cmd);
+    USART_receive_char();
     _delay_ms(50);
     USART_send_char(ENDING_CHAR);
     _delay_ms(50);
     
     while(1){
+        // USART_receive(cmd);
+        USART_receive_char();
         led_on();
-        USART_receive(cmd);
         extract_parameters(cmd);
         // rapid_blink_led(50, 50);
         // USART_send(cmd);

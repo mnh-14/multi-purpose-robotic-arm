@@ -2,7 +2,7 @@
 #define _USART_H_ 1
 
 #ifndef BAUD_NUM
-#define BAUD_NUM 6
+#define BAUD_NUM 51
 #endif
 
 #ifndef ENDING_CHAR
