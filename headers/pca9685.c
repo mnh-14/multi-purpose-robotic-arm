@@ -175,6 +175,13 @@ void pca9685_init_50(uint8_t address){
 //     i2c_tx_stop();
 // }
 
+
+uint32_t find_angle_value(uint16_t angle){
+   if(angle < ANGLE_LOW) return ANGLE_0;
+   if(angle > ANGLE_HIGH) return ANGLE_180;
+   return (ANGLE_0 + (angle * DELTA_ANGLE_0_01));
+}
+
 void pca9685_servo_with_value(uint8_t servoNum, uint32_t angle_value) {
     /* Set limits on angle (-90 to 90 degrees) */
     if (angle_value > ANGLE_180) {

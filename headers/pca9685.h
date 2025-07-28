@@ -60,12 +60,17 @@ enum delta { O1, O_1, O_25, O_5, O_01, O_05 };
 #define ANGLE_0 1024000L
 #define ANGLE_180 5120000L
 #define ANGLE_90 3072000L
+#define ANGLE_VALUE_RANGE_WIDTH 4096000L
 #define DELTA_ANGLE_0_01 227
 #define DELTA_ANGLE_0_05 1138
 #define DELTA_ANGLE_0_1 2276
 #define DELTA_ANGLE_0_5 11378
 #define DELTA_ANGLE_0_25 5689
 #define DELTA_ANGLE_1 22756
+
+#define ANGLE_LOW 0
+#define ANGLE_HIGH 18000
+#define ANGLE_RANGE_WIDTH 180
 
 /* #define ANGLE_0 2048000L
 #define ANGLE_180 4096000L
@@ -90,6 +95,8 @@ enum delta { O1, O_1, O_25, O_5, O_01, O_05 };
  *      angle_value  Angle value, the value required to get the desired angle. Must be between ANGLE_0 and ANGLE_180.
  *                   The values must also be scaled up by SCALING_FACTOR as it will be scaled down in this function
  */
+
+uint32_t find_angle_value(uint16_t angle);
 void pca9685_servo_with_value(uint8_t servoNum, uint32_t angle_value);
 void pca9685_init_50(uint8_t address);
 uint32_t delta_value(enum delta val);
